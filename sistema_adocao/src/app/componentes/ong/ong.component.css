@@ -1,0 +1,170 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1050; /* Modal acima de outros elementos */
+}
+
+.text-center{
+  padding-top: 40px;
+  
+}
+
+/* Bloquear rolagem e interação da página quando o modal estiver aberto */
+body.modal-aberto {
+  overflow: hidden; /* Remove a rolagem */
+  pointer-events: none; /* Desativa cliques */
+}
+
+body.modal-aberto .modal-overlay,
+body.modal-aberto .modal-content {
+  pointer-events: auto; /* Permite interação apenas no modal */
+}
+
+.modal-content {
+  overflow-y: auto; /* Habilita rolagem se necessário */
+  width: 30rem; /* Ajuste o tamanho conforme necessário */
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cadastrar-button {
+  display: block; /* Exibe como bloco */
+  margin: 20px auto; /* Centraliza horizontalmente */
+  width: 200px; /* Largura fixa para o botão */
+  text-align: center;
+  padding: 10px;
+  background-color: #141416;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cadastrar-button:hover {
+  background-color: #0f101d;
+}
+
+.form-animal input,
+.form-animal textarea,
+.form-animal button {
+  width: 100%;
+  margin-bottom: 15px; /* Espaço entre os campos */
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Garante que padding e borda não alterem o tamanho */
+}
+.form-animal button {
+  background-color: #141416;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.form-animal button:hover {
+  background-color: #141416;
+}
+
+.close-button {
+  background-color: #141416;
+  color: white;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Animais Card */
+.animal-card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 0 0 calc(25% - 30px); /* 20% for 5 items per row, minus the total horizontal padding */
+  min-width: 250px;
+  z-index: 1;
+  margin: 15px; /* Increased padding to 15px */
+  padding: 0 auto;
+
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  display: block; /* Adiciona display: block */
+  width: 100%; /* Define a largura para 100% */
+  border-radius: 10px;
+  padding-top: 10px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.card-text {
+  flex-grow: 1;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}
+
+.custom-badge {
+  border: 1px solid rgba(223, 105, 81, 0.3);
+  border-radius: 20px;
+  background-color: transparent;
+  font-size: 0.9rem;
+  padding: 0.25rem 0.75rem;
+  color: black;
+}
+
+.btn {
+  margin: 10px;
+  border-radius: 20px;
+  background: #141416;
+  color: #fff;
+  width: 35%;
+}
+
+.d-flex.justify-content-center {
+  margin-bottom: 1rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media (max-width: 768px) {
+  .animal-card {
+    flex: 0 0 100%; 
+    margin: 15px auto; 
+  }
+
+  .row {
+    text-align: center;
+    padding: 0 20px; /* Adiciona padding de 5px nas laterais */
+  }
+}

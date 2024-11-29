@@ -1,0 +1,80 @@
+.how-we-work {
+  background-color: #f4f4f4; /* Cor de fundo */
+  padding: 2rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* Necessário para posicionar o gato dentro desse container */
+  overflow: hidden; /* Garante que nenhum elemento "vaze" do container */
+  height: 45rem;
+}
+
+.text-section {
+  margin-bottom: 1.5rem;
+}
+
+.text-section p {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 0;
+}
+
+.text-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.content-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   /* Limita a largura da seção */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  position: relative;
+  z-index: 2; /* Garante que o conteúdo fique acima do gato */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cycle-image {
+  max-width: 100%;
+
+
+  width: 100%; /* Ajusta automaticamente com base no limite da content-section */
+}
+
+.cat-image {
+  position: absolute;
+  right: 0; /* Fica colado à borda direita */
+  bottom: 0; /* Fica colado ao fundo da seção */
+  max-width: 22rem;
+  width: 80%; /* Ajusta responsivamente */
+  z-index: 1; /* Coloca o gato atrás do content-section */
+  pointer-events: none; /* Impede que o gato interfira na interação do conteúdo */
+}
+
+@media only screen and (max-width: 1280px) {
+  .how-we-work {
+    height: 20rem;
+  }
+
+  .content-section {
+    background-color: transparent; /* Make background transparent */
+    border-radius: 0; /* Remove border-radius */
+    box-shadow: none; /* Remove box-shadow */
+    height: 10rem;
+  } 
+
+  .cycle-image { 
+    display: block; /* Ensure cycle-image is displayed as a block element */
+    margin: 0 auto; /* Center the image horizontally */
+    width: 100%; /* Make sure the image doesn't overflow */
+    /* Add any other desired styles for cycle-image here */
+  }
+
+  .cat-image {
+    display: none; /* Hide the cat image on smaller screens */
+  }
+}

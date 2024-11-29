@@ -1,0 +1,154 @@
+.faq-container {
+    margin: 0 auto;
+    background-color: rgb(241, 241, 241);
+    padding-bottom: 80px;
+}
+
+.faq-title {
+    padding-top: 50px;
+    text-align: center;
+    margin-bottom: 30px;  /* Added margin-bottom */
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.accordion-container {
+    max-height: 950px;
+    margin: 0 120px;  /* Changed from 80px to 0 for top margin */
+    padding: 80px 120px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 18px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.accordion {
+    border: none; /* Removed border */
+    border-radius: 0; /* Removed border radius */
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.accordion-item {
+    border: none; /* Removed border */
+    padding: 40px 20px;
+    border-bottom: 1px solid #D9DBE9; /* Added specific color */
+}
+
+.accordion-item:last-child {
+    padding: 40px 20px;
+    border-bottom: 1px solid #D9DBE9; /* Keep bottom border on last item */
+}
+
+.accordion-collapse {
+    transition: all 0.7s ease-in-out !important;
+}
+
+.accordion-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+    background-color: #fff;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.5s ease-out !important;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #fff;
+    color: #f95c3c;
+    box-shadow: none;
+}
+
+.accordion-button::after {
+    color: #f95c3c;
+    transition: transform 0.5s ease-out !important;
+}
+
+.accordion-button:not(.collapsed)::after {
+    color: #f95c3c;
+}
+
+
+.accordion-body {
+    padding: 0 20px 40px 20px;  /* Changed padding */
+    font-size: 14px;
+    color: #555;
+    background-color: #fff;  /* Changed to white */
+}
+
+.accordion-body p {
+    margin-top: 5px;  /* Added space between title and answer */
+    margin-bottom: 0;
+}
+/* Override Bootstrap's default styles */
+.accordion-flush .accordion-item {
+    border-radius: 0;
+}
+
+.accordion-flush .accordion-button {
+    border-radius: 0;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(0,0,0,.125);
+}
+
+@media (max-width: 1200px) {
+    .faq-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 992px) {
+    .accordion-container {
+        padding: 60px 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .faq-container {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .faq-title h2 {
+        font-size: 1.2rem; /* Reduce heading size */
+    }
+
+    .faq-title p {
+        font-size: 0.9rem; /* Reduce paragraph size */
+    }
+
+    .accordion-container {
+        margin: 0; /* Remove margin */
+        padding: 20px; /* Adjust padding */
+        border-radius: 8px; /* Reduce border-radius */
+    }
+
+    .accordion-item {
+        padding: 20px 10px; /* Adjust padding */
+    }
+
+    .accordion-button {
+        font-size: 14px; /* Reduce font size */
+    }
+
+    .accordion-body {
+        padding: 10px; /* Adjust padding */
+        font-size: 12px; /* Reduce font size */
+    }
+}

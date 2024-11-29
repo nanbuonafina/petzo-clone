@@ -1,0 +1,25 @@
+<div class="container">
+    <h1 class="text-center">Animais Cadastrados</h1>
+
+    <div class="row">
+        <div *ngFor="let animal of animais" class="card animal-card mb-4 col-md-4">
+          <img [src]="animal.imagemUrl" class="card-img-top" alt="Foto do animal">
+          <div class="card-body">
+            <h5 class="card-title">{{ animal.nome }}</h5>
+            <div class="d-flex justify-content-center mb-3">
+              <p class="badge rounded-pill custom-badge mx-1">{{ animal.tipo }}</p>
+              <p class="badge rounded-pill custom-badge mx-1">{{ animal.idade }}</p>
+              <p class="badge rounded-pill custom-badge mx-1">{{ animal.localizacao }}</p>
+            </div>
+            <p class="card-text">{{ animal.descricao }}</p>
+            <p class="card-text"><strong>Contato:</strong> {{ animal.contato }}</p>
+            <a href="https://wa.me/{{animal.contato}}" target="_blank" class="a">
+                <button class="btn">Fale com o tutor</button>
+            </a>
+            <div class="text-center">
+            </div>
+          </div>
+        </div>
+</div>
+      
+      

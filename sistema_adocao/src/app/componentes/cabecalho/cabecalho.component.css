@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  position: fixed; /* Make navbar stay at top */
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+/* Add these new styles */
+.nav-links li a:hover,
+.nav-links li a:focus,
+.nav-links li a:active {
+  color: #ff6b6b;
+  outline: none;
+  opacity: 1;
+}
+
+/* Override any Bootstrap or framework styles that might interfere */
+.nav-links li a:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.nav-links li a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ff6b6b;
+  transition: width .3s;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.register-btn .btn {
+  background-color: #faae2b;
+  padding: 8px 12px;
+  border: 1px solid #fff;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.register-btn .btn:hover {
+  background-color: #e09c24;
+}
+
+/* ESTILIZACAO DO CABECALHO DA ONG */
+
+.navbar-ong {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 20px;
+  background-color: #F1A501;
+}
+.nav-links-ong {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+.nav-links-ong li {
+  a {
+    text-decoration: none;
+    color: #212832;
+    font-weight: 500;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #ff6b6b;
+    }
+  }
+}
+.desconectar-btn .btn {
+  background-color: #DF6951;
+  padding: 8px 12px;
+  border: 1px solid #212832;
+  text-decoration: none;
+  color: #212832;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.desconectar-btn .btn:hover {
+  background-color: #ab4e3c;
+}
+
+.hamburger {
+  display: none; /* Hide by default */
+  cursor: pointer;
+  padding: 10px; /* Adjust padding as needed */
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px 0;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show hamburger on smaller screens */
+    
+  }
+
+  .navbar {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links,
+  .nav-links-ong {
+    display: none;
+    position: relative; /* Define a posição como relativa */
+    margin-top: 70px; /* Ajuste conforme a altura do cabeçalho + margem desejada */
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    flex-direction: column;
+    padding: 10px;
+    z-index: 999; /* Garante que o menu fique abaixo do cabeçalho */
+    
+  }
+
+  .nav-links.open, /* Show when menu is open */
+  .nav-links-ong.open {
+    display: flex;
+  
+  }
+
+  .nav-links li, /* Style navigation items for mobile */
+  .nav-links-ong li {
+    margin: 10px 0;
+  }
+
+  .nav-links li a, /* Style navigation links for mobile */
+  .nav-links-ong li a {
+    display: block;
+    padding: 10px;
+  }
+
+  .register-btn {
+    margin-top: 10px; /* Adjust spacing as needed */
+  }
+}

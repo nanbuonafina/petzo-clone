@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="image-container">
+      <img [src]="'assets/dog4.png'" alt="Salsicha lambendo o próprio focinho." class="animal-image">
+    </div>
+<div class="form-container">
+  <h2>Olá, ONG ❤️!</h2>
+  <h4>Estamos felizes em te ver novamente!</h4>
+
+  <div *ngIf="errorMessage" class="alert error-message">
+    <i class="fas fa-exclamation-circle"></i> {{ errorMessage }}
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input 
+        id="email" 
+        formControlName="email" 
+        type="email"
+        [class.invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+        required>
+      <small class="error-text" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+        {{ getErrorMessage('email') }}
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Senha:</label>
+      <input 
+        id="password" 
+        formControlName="password" 
+        type="password"
+        [class.invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+        required>
+      <small class="error-text" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+        {{ getErrorMessage('password') }}
+      </small>
+    </div>
+
+    <button 
+      type="submit" 
+      [disabled]="isLoading"
+      [class.loading]="isLoading"
+      class="submit-button">
+      {{ isLoading ? 'Entrando...' : 'Entrar' }}
+    </button>
+
+    <p class="register-link">
+      Não tem uma conta? <a routerLink="/registro">Registre-se</a>
+    </p>
+  </form>
+</div>
+</div>

@@ -1,0 +1,81 @@
+.animal-card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 0 0 calc(25% - 30px); /* 20% for 5 items per row, minus the total horizontal padding */
+  min-width: 250px;
+  z-index: 1;
+  margin: 15px; /* Increased padding to 15px */
+  padding: 0 auto;
+
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  display: block; /* Adiciona display: block */
+  width: 100%; /* Define a largura para 100% */
+  border-radius: 10px;
+  padding-top: 10px;
+}
+
+.card-body {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.card-text {
+  flex-grow: 1;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}
+
+.custom-badge {
+  border: 1px solid rgba(223, 105, 81, 0.3);
+  border-radius: 20px;
+  background-color: transparent;
+  font-size: 0.9rem;
+  padding: 0.25rem 0.75rem;
+  color: black;
+}
+
+.btn {
+  margin: 10px;
+  border-radius: 20px;
+  background: #141416;
+  color: #fff;
+  width: 100%;
+}
+
+.d-flex.justify-content-center {
+  margin-bottom: 1rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+@media (max-width: 768px) {
+  .animal-card {
+    flex: 0 0 100%; 
+    margin: 15px auto; 
+  }
+
+  .row {
+    text-align: center;
+    padding: 0 20px; /* Adiciona padding de 5px nas laterais */
+  }
+}

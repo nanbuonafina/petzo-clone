@@ -1,0 +1,31 @@
+<div class="form-container">
+    <form>
+        <div class="form-group">
+            <button type="button" class="btn btn-secondary btn-block upload-button" onclick="document.getElementById('fileInput').click();">
+                Adicione as melhores fotos
+            </button>
+            <input type="file" id="fileInput" style="display: none;" multiple>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Nome do animal" required>
+        </div>
+        <div class="form-row">
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Espécie" required>
+            </div>
+            <div class="col">
+                <select class="form-control">
+                    <option value="" disabled selected>Faixa Etária</option>
+                    <option value="filhote">Filhote</option>
+                    <option value="adulto">Adulto</option>
+                    <option value="idoso">Idoso</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <h6>Descreva sobre o animal</h6>
+            <textarea class="form-control" rows="4" placeholder="Conte sobre a alimentação dele, personalidade, tudo que seu coração falar." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-warning btn-block">Enviar</button>
+    </form>
+</div>

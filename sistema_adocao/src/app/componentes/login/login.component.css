@@ -1,0 +1,155 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.image-container {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.animal-image {
+  align-self: flex-start;
+  width: 35rem;
+  height: auto;
+  padding: 0;
+  margin: 0rem 20rem 0rem 0rem;
+  object-fit: contain;
+  display: block;
+}
+
+.form-container {
+  flex: 0 0 50%;
+  background-color: white;
+  padding: 4rem 3rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-left: 20px;
+  margin-top: 60px; /* Espaço entre o topo da página e o form */
+  min-width: 300px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  font-size: 1rem;
+}
+
+.invalid {
+  border-color: #dc3545;
+}
+
+.error-text {
+  color: #dc3545;
+  font-size: 0.875rem;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.error-message {
+  color: #dc3545;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.alert {
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+
+.submit-button {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.submit-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.submit-button.loading {
+  opacity: 0.7;
+}
+
+.register-link {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 12px; 
+}
+
+.register-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+h2 {
+  font-size: 25px;
+  text-align: start;
+  color: #333;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 15px;
+  text-align: start;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+  }
+
+  .image-container {
+    display: none;
+  }
+
+  .form-container {
+    width: 90%; 
+    margin: 0 auto; /* Center horizontally */
+    padding: 2rem;
+    margin-top: 150px;
+  }
+}

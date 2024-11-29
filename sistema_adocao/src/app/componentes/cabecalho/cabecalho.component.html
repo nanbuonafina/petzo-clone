@@ -1,0 +1,35 @@
+<!-- HTML DA GERAL -->
+<header class="navbar" *ngIf="!isOngPage()">
+  <div class="logo">
+    <h1>Petzo</h1>
+  </div>
+  <nav>
+    <ul class="nav-links" [ngClass]="{ 'open': isMenuOpen }"> 
+      <li><a href="#">Home</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#animais">Encontre o Seu</a></li>
+      <li><a href="#accordion">FAQ</a></li>
+      <li><a routerLink="/login">Login</a></li>
+    </ul>
+  </nav>
+  <div class="register-btn">
+    <a routerLink="/registro" class="btn">Cadastre-se</a>
+  </div>
+
+  <!-- Hamburger icon -->
+  <div class="hamburger" (click)="toggleMenu()">
+    <span class="navbar-toggler-icon"></span>
+  </div>
+</header>
+
+<!-- HTML DA ONG -->
+<header class="navbar-ong" *ngIf="isOngPage()">
+  <div class="logo">
+    <h1>Petzo</h1>
+  </div>
+
+  <div class="desconectar-btn">
+    <a routerLink="/" class="btn">Desconectar</a>
+  </div>
+
+</header>

@@ -1,0 +1,116 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 6rem;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    gap: 7rem;
+    align-items: center;
+  }
+
+  .main-text {
+    max-width: 600px;
+    margin-left: 150px;
+
+    h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #181E4B;
+      margin-bottom: 1rem;
+
+      .highlight {
+        color: #d35d2e;
+        text-decoration: underline;
+      }
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      color: #5E6282;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .main-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      background-color: #faae2b;
+      padding: 8px 12px;
+      border: 1px solid #fff;
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+  }
+
+  .main-image {
+    img {
+      max-width: 35rem;
+      border-radius: 10px;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+} 
+
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column; /* Stack elements vertically */
+    text-align: center; 
+    padding: 1rem 2rem; 
+  }
+
+  .main .container {
+    display: flex; 
+    flex-direction: row; /* Arrange items in a row */
+    flex-wrap: wrap; /* Allow wrapping to the next line */
+    gap: 2rem; 
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main .main-text {
+    margin-left: 0; 
+    max-width: 100%; /* Make text take full width if needed */
+    padding-top: 30px;
+    
+    h2 {
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .main .main-image {
+    display: none; /* Hide the image container */
+
+  }
+  
+  .main .main-buttons {
+    flex-direction: row; /* Arrange buttons horizontally */
+    align-items: center;
+    justify-content: center; /* Center buttons horizontally */
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .main .main-buttons app-button {
+    width: auto; /* Allow buttons to take their natural width */
+  }
+}

@@ -1,0 +1,29 @@
+<div class="faq-container">
+    <div class="faq-title">
+        <h2>Tem alguma dúvida?</h2>
+        <p>Veja as nossas perguntas mais frequentes</p>
+    </div>
+    <div class="accordion-container">
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item" *ngFor="let item of accordionItems">
+                <h2 class="accordion-header" [id]="'flush-heading' + item.id">
+                    <button 
+                        class="accordion-button" 
+                        [class.collapsed]="!item.isOpen"
+                        type="button" 
+                        (click)="toggleAccordion(item)">
+                        {{item.title}}
+                    </button>
+                </h2>
+                <div 
+                    [id]="'flush-collapse' + item.id" 
+                    class="accordion-collapse collapse"
+                    [class.show]="item.isOpen">
+                    <div class="accordion-body">
+                        {{item.content}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

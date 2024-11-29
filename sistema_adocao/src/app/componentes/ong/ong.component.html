@@ -1,0 +1,92 @@
+<div class="container">
+  <h1 class="text-center">Animais Cadastrados</h1>
+
+  <!-- Botão para abrir o modal -->
+  <button (click)="abrirModal()" class="cadastrar-button">
+    Cadastrar Animal
+  </button>
+
+  <!-- Modal -->
+  <div *ngIf="mostrarModal" class="modal-overlay" (click)="fecharModal($event)">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <button class="close-button" (click)="fecharModal($event)">&times;</button>
+      <h2>{{ editandoId ? 'Editar Animal' : 'Cadastrar Animal' }}</h2>
+      <form (ngSubmit)="salvarAnimal()" class="form-animal">
+        <input
+          type="text"
+          placeholder="Nome"
+          [(ngModel)]="novoAnimal.nome"
+          name="nome"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Idade"
+          [(ngModel)]="novoAnimal.idade"
+          name="idade"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Tipo (Ex: Gato, Cachorro)"
+          [(ngModel)]="novoAnimal.tipo"
+          name="tipo"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Localização"
+          [(ngModel)]="novoAnimal.localizacao"
+          name="localizacao"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Número de celular"
+          [(ngModel)]="novoAnimal.contato"
+          name="contato"
+          required
+        />
+        <textarea
+          placeholder="Descrição"
+          [(ngModel)]="novoAnimal.descricao"
+          name="descricao"
+          rows="4"
+          required
+        ></textarea>
+        <input
+          type="text"
+          placeholder="URL da Imagem"
+          [(ngModel)]="novoAnimal.imagemUrl"
+          name="imagemUrl"
+          required
+        />
+        <button type="submit">
+          {{ editandoId ? 'Atualizar' : 'Cadastrar' }}
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Listagem de Animais em Cards -->
+<div class="row">
+  <div *ngFor="let animal of animais" class="card animal-card mb-4 col-md-4">
+    <img [src]="animal.imagemUrl" class="card-img-top" alt="Foto do animal">
+    <div class="card-body">
+      <h5 class="card-title">{{ animal.nome }}</h5>
+      <div class="d-flex justify-content-center mb-3">
+        <p class="badge rounded-pill custom-badge mx-1">{{ animal.tipo }}</p>
+        <p class="badge rounded-pill custom-badge mx-1">{{ animal.idade }}</p>
+        <p class="badge rounded-pill custom-badge mx-1">{{ animal.localizacao }}</p>
+      </div>
+      <p class="card-text">{{ animal.descricao }}</p>
+      <p class="card-text"><strong>Contato:</strong> {{ animal.contato }}</p>
+      <div class="text-center">
+        <button (click)="editarAnimal(animal)" class="btn">Editar</button>
+        <button (click)="excluirAnimal(animal.id)" class="btn">Excluir</button>
+      </div>
+    </div>
+  </div>
+</div>
+

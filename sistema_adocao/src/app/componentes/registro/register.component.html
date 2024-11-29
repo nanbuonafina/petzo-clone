@@ -1,0 +1,97 @@
+<div class="container">
+  <div class="image-container">
+    <img [src]="'assets/dog4.png'" alt="Salsicha lambendo o próprio focinho." class="animal-image">
+  </div>
+  <div class="form-container">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form">
+      <h2>Bem vindo!</h2>
+      <h4>Estamos felizes em ter você conosco!</h4>
+
+      <!-- Nome -->
+      <div class="form-group">
+        <label for="name">Nome*</label>
+        <input
+          type="text"
+          id="name"
+          formControlName="name"
+          [class.invalid]="nameControl?.invalid && nameControl?.touched"
+        >
+        <div *ngIf="nameControl?.invalid && nameControl?.touched" class="error-text">
+          Nome é obrigatório.
+        </div>
+      </div>
+
+      <!-- CNPJ -->
+      <div class="form-group">
+        <label for="cnpj">CNPJ*</label>
+        <input
+          type="text"
+          id="cnpj"
+          formControlName="cnpj"
+          [class.invalid]="cnpjControl?.invalid && cnpjControl?.touched"
+          placeholder="Digite apenas números"
+        >
+        <div *ngIf="cnpjControl?.invalid && cnpjControl?.touched" class="error-text">
+          CNPJ inválido.
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email*</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          [class.invalid]="emailControl?.invalid && emailControl?.touched"
+        >
+        <div *ngIf="emailControl?.invalid && emailControl?.touched" class="error-text">
+          Email inválido.
+        </div>
+      </div>
+
+      <!-- Telefone -->
+      <div class="form-group">
+        <label for="phone">Telefone*</label>
+        <input
+          type="tel"
+          id="phone"
+          formControlName="phone"
+          [class.invalid]="phoneControl?.invalid && phoneControl?.touched"
+          placeholder="Digite apenas números"
+        >
+        <div *ngIf="phoneControl?.invalid && phoneControl?.touched" class="error-text">
+          Telefone inválido.
+        </div>
+      </div>
+
+      <!-- Senha -->
+      <div class="form-group">
+        <label for="password">Senha*</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          [class.invalid]="passwordControl?.invalid && passwordControl?.touched"
+        >
+        <div *ngIf="passwordControl?.invalid && passwordControl?.touched" class="error-text">
+          Senha inválida.
+        </div>
+      </div>
+
+      <!-- Mensagens de erro e sucesso -->
+      <div *ngIf="errorMessage" class="alert">
+        {{ errorMessage }}
+      </div>
+
+      <div *ngIf="successMessage" class="alert alert-success">
+        {{ successMessage }}
+      </div>
+
+      <!-- Botão -->
+      <button type="submit" [class.loading]="isSubmitting" class="submit-button" [disabled]="isSubmitting">
+        {{ isSubmitting ? 'Registrando...' : 'Registrar' }}
+      </button>
+    </form>
+  </div>
+</div>
